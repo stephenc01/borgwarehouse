@@ -114,7 +114,7 @@ check_env() {
 }
 
 check_env
-#ensure_privsep_dir
+ensure_privsep_dir
 init_ssh_server
 check_ssh_directory
 create_authorized_keys_file
