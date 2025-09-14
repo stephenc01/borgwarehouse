@@ -34,7 +34,7 @@ ENV NODE_ENV production
 ENV HOSTNAME=
 
 RUN apt-get update && apt-get install -y \
-    supervisor curl jq jc openssh-server rsyslog && \
+    supervisor curl jq jc openssh-server rsyslog wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Download and install the pre-compiled BorgBackup binary from the releases page
