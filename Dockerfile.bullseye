@@ -33,7 +33,6 @@ ARG GID
 ENV NODE_ENV production
 ENV HOSTNAME=
 
-RUN echo 'deb http://deb.debian.org/debian bullseye-backports main' >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
     supervisor curl jq jc openssh-server rsyslog && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
