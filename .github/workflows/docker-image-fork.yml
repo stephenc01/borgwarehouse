@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./
-          file: ./Dockerfile
+          file: ./Dockerfile.bullseye
           push: true
           tags: stephenc01/borgwarehouse:latest
       - name: Docker Hub Description
