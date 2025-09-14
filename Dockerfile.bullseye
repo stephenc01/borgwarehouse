@@ -33,13 +33,18 @@ ARG GID
 ENV NODE_ENV production
 ENV HOSTNAME=
 
+# Combine apt-get install and borgbackup download into a single RUN command
 RUN apt-get update && apt-get install -y \
-    supervisor curl jq jc openssh-server rsyslog wget && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Download and install the pre-compiled BorgBackup binary from the releases page
-# You can replace this URL with the specific version you need from: https://github.com/borgbackup/borg/releases
-RUN wget https://github.com/borgbackup/borg/releases/download/1.2.7/borg-linux64 \
+    supervisor \
+    curl \
+    jq \
+    jc \
+    openssh-server \
+    rsyslog \
+    wget \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && wget https://github.com/borgbackup/borg/releases/download/1.2.7/borg-linux64 \
     && chmod +x borg-linux64 \
     && mv borg-linux64 /usr/local/bin/borg
 
