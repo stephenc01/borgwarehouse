@@ -65,6 +65,6 @@ COPY --from=builder --chown=borgwarehouse:borgwarehouse /app/docker/sshd_config 
 
 USER borgwarehouse
 
-EXPOSE 3000 22
+EXPOSE 3000 2222
 
 ENTRYPOINT ["./docker-bw-init.sh"]
